@@ -675,15 +675,27 @@ const ReactDOM: Object = {
     );
   },
 
+  /**
+   * 
+   * @param {*} element 
+   * @param {*} container 根节点
+   * @param {*} callback render 回调函数
+   */
   render(
     element: React$Element<any>,
     container: DOMContainer,
     callback: ?Function,
   ) {
+    // console.log('element', element)
+    // console.log('container', container)
+    // console.log('callback', callback)
+    
+    // 异常提示
     invariant(
       isValidContainer(container),
       'Target container is not a DOM element.',
     );
+
     if (__DEV__) {
       warningWithoutStack(
         !container._reactHasBeenPassedToCreateRootDEV,
